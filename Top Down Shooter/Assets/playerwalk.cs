@@ -5,54 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class playerwalk : MonoBehaviour
 {
-    public float plMaxSpeed = 5f;
-    public float moveForce = 10f;
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
-    public KeyCode left;
-    public KeyCode right;
-    public KeyCode up;
-    public KeyCode down;
-    
+    public KeyCode moveKey = KeyCode.W;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float horizontalInput = 0f;
-        float verticalInput = 0f;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f;
 
-        if (Input.GetKey(left))
-        {
-            horizontalInput = -1f;
-        }
-        else if (Input.GetKey(right))
-        {
-            horizontalInput = 1f;
-        }
+        Vector3 direction = (mousePosition - transform.position).normalized;
 
-        if (Input.GetKey(down))
+        if (Input.GetKey(moveKey))
         {
-            verticalInput = -1f;
+            rb.velocity = direction * moveSpeed;
         }
-        else if (Input.GetKey(up))
+        else
         {
-            verticalInput = 1f;
+            rb.velocity = Vector2.zero;
         }
 
-        rb.velocity = new Vector2(horizontalInput * plMaxSpeed, verticalInput * plMaxSpeed);
-
-        if (Mathf.Abs(rb.velocity.x) < plMaxSpeed)
-        {
-            rb.AddForce(new Vector2(horizontalInput * moveForce, 0f), ForceMode2D.Force);
-        }
-
-        if (Mathf.Abs(rb.velocity.y) < plMaxSpeed)
-        {
-            rb.AddForce(new Vector2(0f, verticalInput * moveForce), ForceMode2D.Force);
-        }
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }
