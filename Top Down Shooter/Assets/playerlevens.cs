@@ -30,7 +30,7 @@ public class playerlevens : MonoBehaviour
 
     void UpdateLevensUI()
     {
-        levensCount.text = "Levens: " + levens; // Update de tekst
+        levensCount.text = "" + levens; // Update de tekst
     }
 
     void GameOver()
