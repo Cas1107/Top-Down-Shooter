@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Playerachtervolging : MonoBehaviour
 {
-    public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
+public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
     public float moveSpeed = 2f; // Hoe snel de vijand beweegt
     public LayerMask playerLayer; // Zorg ervoor dat de speler een aparte layer heeft
 
