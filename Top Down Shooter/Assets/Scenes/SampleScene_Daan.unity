@@ -2679,6 +2679,7 @@ GameObject:
   - component: {fileID: 1674721054}
   - component: {fileID: 1674721053}
   - component: {fileID: 1674721055}
+  - component: {fileID: 1674721056}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -2888,6 +2889,20 @@ MonoBehaviour:
   SchootPoint: {fileID: 220670054}
   bulletForce: 750
   isGrounded: 1
+--- !u!114 &1674721056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674721048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc6c376bd9e4a3488000162b508549d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levens: 3
+  levensCount: {fileID: 1402731045}
 --- !u!1 &1696653971
 GameObject:
   m_ObjectHideFlags: 0
