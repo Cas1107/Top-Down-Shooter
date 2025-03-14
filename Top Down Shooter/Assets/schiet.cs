@@ -29,6 +29,7 @@ public class schiet : MonoBehaviour
             {
                 rb.AddForce(transform.right * bulletForce);
             }
+
         }
     }
 }

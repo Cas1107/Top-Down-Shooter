@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class deletekogel : MonoBehaviour
 {
-    public float lifetime = 1f; // De tijd waarna de kogel automatisch wordt vernietigd
-
-    void Start()
+    public void Start()
     {
-
-        // Vernietig de kogel na de ingestelde levensduur
-        Destroy(gameObject, lifetime);
+        Debug.Log("hoi");
     }
+    public float lifetime = 1f; // Hoe lang de kogel blijft bestaan voordat deze vanzelf verdwijnt
+    //void OnCollisionEnter(Collision collision)
+    //{
 
+    //    // Controleer of de kogel een object raakt
+    //    if (collision.gameObject)
+    //    {
+    //        Debug.Log("!");
+    //        // Vernietig de kogel bij impact
+    //        Destroy(gameObject);
+    //    }
+    //}
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Wall")
-        {
-            collision.gameObject.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
-
-            Destroy(gameObject);
-        }
-        // Vernietig de kogel zodra het een object raakt
-        Destroy(gameObject);
+        Debug.Log("Botsing gedetecteerd met: " + collision.gameObject.name);
     }
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger geactiveerd door: " + other.gameObject.name);
+    }
+
 }
