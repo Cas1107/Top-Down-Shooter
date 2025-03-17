@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 9
+  detectionRadius: 6
   moveSpeed: 4
   playerLayer:
     serializedVersion: 2
