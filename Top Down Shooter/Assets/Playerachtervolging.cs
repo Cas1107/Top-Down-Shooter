@@ -27,11 +27,13 @@ public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
         {
             player = hit.collider.transform;
             playerInRange = true;
+            Debug.Log("player hoi");
         }
         else
         {
             playerInRange = false;
-        }
+            Debug.Log(hit.collider.name);        
+        } 
     }
 
     void FollowPlayer()
