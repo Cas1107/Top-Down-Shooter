@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddc8f3eed3733140861c524ffd5a754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleScene: SampleScene
+  SampleScene_Casper: SampleScene_Casper
 --- !u!4 &1506478827
 Transform:
   m_ObjectHideFlags: 0

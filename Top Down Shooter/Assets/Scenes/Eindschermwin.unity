@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddc8f3eed3733140861c524ffd5a754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleScene: SampleScene
+  SampleScene_Casper: SampleScene_Casper
 --- !u!114 &961516349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddc8f3eed3733140861c524ffd5a754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleScene: Startscherm
+  SampleScene_Casper: Startscherm
 --- !u!1 &1022332477
 GameObject:
   m_ObjectHideFlags: 0
