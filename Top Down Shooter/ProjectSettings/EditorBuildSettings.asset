@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Eindschermwin.unity
     guid: 7b43f8a638fa47249a6d07afd22e1a86
+  - enabled: 1
+    path: Assets/Scenes/Eindschermloss.unity
+    guid: 1fcd5712af73c04429a9a5ce78c1879d
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class playerlevens : MonoBehaviour
@@ -32,11 +33,9 @@ public class playerlevens : MonoBehaviour
     {
         levensCount.text = "" + levens; // Update de tekst
     }
-
     void GameOver()
     {
-        Debug.Log("Game Over!");
-        // Voeg hier logica toe voor game over (bijv. restart level)
+        SceneManager.LoadScene("Eindschermwin"); // Zorg dat je "Eindscherm" gebruikt als de naam van je eindscherm-scène
     }
 }
 

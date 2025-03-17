@@ -22,8 +22,8 @@ public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
 
     void DetectPlayer()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, detectionRadius, Vector2.zero, 0f, playerLayer);
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, detectionRadius, Vector2.zero, 6f, playerLayer);
+        if (hit.collider.CompareTag("Player"))//(hit.collider != null && hit.collider.CompareTag("Player"))
         {
             player = hit.collider.transform;
             playerInRange = true;
@@ -38,8 +38,9 @@ public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
     {
         if (player == null) return;
 
-        // Beweeg richting de speler
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        transform.right = player.transform.position - transform.position;
     }
 
     // Om de detectiecirkel te zien in de editor
