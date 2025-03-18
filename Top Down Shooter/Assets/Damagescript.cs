@@ -4,37 +4,16 @@ using UnityEngine;
 
 public class Damagescript : MonoBehaviour
 {
-    public int maxHealth = 100;
-    private int currentHealth;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        currentHealth = maxHealth;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet")) // Zorg dat je Bullet prefab de tag "Bullet" heeft
+        if (other.CompareTag("Enemy")) // Controleer of de kogel een vijand raakt
         {
-            TakeDamage(20);
-            Destroy(collision.gameObject); // Verwijder de kogel na impact
+            Enemyy enemy = other.GetComponent<Enemyy>(); // Haal het Enemy-script op
+            if (enemy != null)
+            {
+                enemy.TakeDamage(1); // Verminder de gezondheid van de vijand met 1
+            }
+            Destroy(gameObject); // Verwijder de kogel na impact
         }
-    }
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        Debug.Log("Enemy Health: " + currentHealth);
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Enemy is dead");
-        Destroy(gameObject); // Verwijdert de vijand uit het spel
     }
 }
