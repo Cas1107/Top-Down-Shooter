@@ -817,6 +817,10 @@ MonoBehaviour:
   - {fileID: 711611906}
   - {fileID: 1002634324}
   moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &194993171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2241,10 @@ MonoBehaviour:
   - {fileID: 2099313275}
   - {fileID: 1453483674}
   moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &956312867
 Rigidbody2D:
   serializedVersion: 4
@@ -2756,6 +2764,10 @@ MonoBehaviour:
   - {fileID: 683580901}
   - {fileID: 333268116}
   moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1293982375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3687,10 @@ MonoBehaviour:
   - {fileID: 687080880}
   - {fileID: 75175972}
   moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!60 &1662579639
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4200,7 +4216,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4259,6 +4275,10 @@ MonoBehaviour:
   - {fileID: 1175120072}
   - {fileID: 608700843}
   moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1778349103
 GameObject:
   m_ObjectHideFlags: 0

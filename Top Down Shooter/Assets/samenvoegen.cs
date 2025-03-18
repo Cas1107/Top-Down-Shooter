@@ -5,60 +5,71 @@ using UnityEngine.AI;
 
 public class samenvoegen : MonoBehaviour
 {
-    public Transform[] waypoints; // Array van waypoints
-    public Transform player; // De speler
-    public float detectionRange = 5f; // Hoe dichtbij de speler moet zijn om de vijand af te leiden
-    public float lostRange = 7f; // Hoe ver de speler moet gaan voordat de vijand stopt met volgen
+    [SerializeField] private Transform[] waypoints;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float detectionRadius = 5f;
+    [SerializeField] private LayerMask playerLayer;
 
-    private NavMeshAgent agent;
-    private int currentWaypointIndex = 0;
-    private bool chasingPlayer = false;
+    private Transform player;
+    private bool playerInRange = false;
+    private int waypointIndex = 0;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        if (waypoints.Length > 0)
-        {
-            agent.SetDestination(waypoints[currentWaypointIndex].position);
-        }
+        transform.position = waypoints[waypointIndex].position;
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        DetectPlayer();
 
-        if (chasingPlayer)
+        if (playerInRange)
         {
-            if (distanceToPlayer > lostRange) // Speler is te ver, ga terug naar waypoints
-            {
-                chasingPlayer = false;
-                GoToNextWaypoint();
-            }
-            else // Blijf de speler volgen
-            {
-                agent.SetDestination(player.position);
-            }
+            FollowPlayer();
         }
         else
         {
-            if (distanceToPlayer < detectionRange) // Speler komt dichtbij, start achtervolging
-            {
-                chasingPlayer = true;
-                agent.SetDestination(player.position);
-            }
-            else if (!agent.pathPending && agent.remainingDistance < 0.5f) // Bereikt waypoint, ga naar de volgende
-            {
-                GoToNextWaypoint();
-            }
+            FollowWaypoints();
         }
     }
 
-    void GoToNextWaypoint()
+    void DetectPlayer()
     {
-        if (waypoints.Length == 0)
-            return;
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
+        if (hit != null && hit.CompareTag("Player"))
+        {
+            player = hit.transform;
+            playerInRange = true;
+            Debug.Log("Player gedetecteerd: " + hit.name);
+        }
+        else
+        {
+            playerInRange = false;
+        }
+    }
 
-        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-        agent.SetDestination(waypoints[currentWaypointIndex].position);
+    void FollowPlayer()
+    {
+        if (player == null) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+    }
+
+    void FollowWaypoints()
+    {
+        if (waypoints.Length == 0) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].position, moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f)
+        {
+            waypointIndex = (waypointIndex + 1) % waypoints.Length;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
