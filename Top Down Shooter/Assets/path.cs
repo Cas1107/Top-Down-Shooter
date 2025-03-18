@@ -4,75 +4,70 @@ using UnityEngine;
 
 public class path : MonoBehaviour
 {
-    [SerializeField] Transform[] points;
+    [SerializeField] private Transform[] points;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float detectionRadius = 5f;
+    [SerializeField] private LayerMask playerLayer;
 
-    [SerializeField] private float moveSpeed;
-    //telt points in array
-    public float detectionRadius = 5f; // De detectiecirkel rondom de vijand
-    public LayerMask playerLayer; // Zorg ervoor dat de speler een aparte layer heeft
-    private int pointsIndex;
+    private int pointsIndex = 0;
     private Transform player;
     private bool playerInRange = false;
 
     void Start()
     {
-        transform.position = points[pointsIndex].transform.position;
+        transform.position = points[pointsIndex].position;
     }
-
 
     void Update()
     {
-
         DetectPlayer();
+
         if (playerInRange)
         {
             FollowPlayer();
         }
-
-        else if (pointsIndex <= points.Length - 1)
+        else
         {
-            transform.position = Vector2.MoveTowards(transform.position, points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
-
-            if (transform.position == points[pointsIndex].transform.position)
-            {
-                pointsIndex += 1;
-            }
-
-            if (pointsIndex == points.Length)
-            {
-                pointsIndex = 0;
-            }
+            FollowWaypoints();
         }
+    }
 
-        void DetectPlayer()
+    void DetectPlayer()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
+        if (hit != null && hit.CompareTag("Player"))
         {
-            RaycastHit2D hit = Physics2D.CircleCast(transform.position, detectionRadius, Vector2.zero, 6f, playerLayer);
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
-            {
-                player = hit.collider.transform;
-                playerInRange = true;
-
-            }
-            else
-            {
-                playerInRange = false;
-                //Debug.Log(hit.collider.name);        
-            }
+            player = hit.transform;
+            playerInRange = true;
         }
-
-        void FollowPlayer()
+        else
         {
-            if (player == null) return;
-
-
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-            transform.right = player.transform.position - transform.position;
+            playerInRange = false;
         }
+    }
 
-        void OnDrawGizmosSelected()
+    void FollowPlayer()
+    {
+        if (player == null) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+    }
+
+    void FollowWaypoints()
+    {
+        if (points.Length == 0) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, points[pointsIndex].position, moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, points[pointsIndex].position) < 0.1f)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, detectionRadius);
+            pointsIndex = (pointsIndex + 1) % points.Length;
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }

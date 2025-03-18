@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 8166183}
   - component: {fileID: 8166182}
   - component: {fileID: 8166185}
-  - component: {fileID: 8166184}
+  - component: {fileID: 8166186}
   m_Layer: 0
   m_Name: enemy_7
   m_TagString: Enemy
@@ -314,19 +314,6 @@ PolygonCollider2D:
       - {x: 0.3125, y: 0.0625}
       - {x: 0.25, y: 0.25}
   m_UseDelaunayMesh: 0
---- !u!114 &8166184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca7bf0a2d90da34e880eac7785eeaa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
 --- !u!114 &8166185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +327,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &8166186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  moveSpeed: 4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &71694745
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +358,7 @@ GameObject:
   - component: {fileID: 71694752}
   - component: {fileID: 71694751}
   - component: {fileID: 71694753}
+  - component: {fileID: 71694754}
   m_Layer: 0
   m_Name: enemy_10
   m_TagString: Enemy
@@ -543,6 +548,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &71694754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71694745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  moveSpeed: 4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &75175971
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +885,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &193861799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,6 +1174,7 @@ GameObject:
   - component: {fileID: 445990675}
   - component: {fileID: 445990674}
   - component: {fileID: 445990676}
+  - component: {fileID: 445990677}
   m_Layer: 0
   m_Name: enemy_11
   m_TagString: Enemy
@@ -1341,6 +1364,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &445990677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445990668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  moveSpeed: 4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &461862727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2031,7 @@ GameObject:
   - component: {fileID: 811669262}
   - component: {fileID: 811669261}
   - component: {fileID: 811669263}
+  - component: {fileID: 811669264}
   m_Layer: 0
   m_Name: enemy_8
   m_TagString: Enemy
@@ -2180,6 +2221,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &811669264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811669255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  moveSpeed: 4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &812034551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,7 +2403,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &956312867
 Rigidbody2D:
   serializedVersion: 4
@@ -2522,6 +2580,10 @@ PrefabInstance:
     - target: {fileID: 1969221904316860797, guid: 4817e5430f7c4e047935a25fc13bd020, type: 3}
       propertyPath: points.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969221904316860797, guid: 4817e5430f7c4e047935a25fc13bd020, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 1969221904316860797, guid: 4817e5430f7c4e047935a25fc13bd020, type: 3}
       propertyPath: points.Array.data[0]
@@ -2884,7 +2946,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &1263582244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3465,6 +3527,7 @@ GameObject:
   - component: {fileID: 1572931622}
   - component: {fileID: 1572931621}
   - component: {fileID: 1572931623}
+  - component: {fileID: 1572931624}
   m_Layer: 0
   m_Name: enemy_4
   m_TagString: Enemy
@@ -3654,6 +3717,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &1572931624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572931615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4dfce3ee35c114b81633c49c3563b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  moveSpeed: 4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1642116872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,10 +3776,10 @@ GameObject:
   - component: {fileID: 1662579637}
   - component: {fileID: 1662579636}
   - component: {fileID: 1662579635}
-  - component: {fileID: 1662579638}
   - component: {fileID: 1662579640}
   - component: {fileID: 1662579639}
   - component: {fileID: 1662579641}
+  - component: {fileID: 1662579642}
   m_Layer: 0
   m_Name: enemy_2
   m_TagString: Enemy
@@ -3795,29 +3875,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1662579638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662579632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7973d5c2d3a29bb40bb194c56fed7160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 812034552}
-  - {fileID: 1811947093}
-  - {fileID: 1948403695}
-  - {fileID: 687080880}
-  - {fileID: 75175972}
-  moveSpeed: 3
-  detectionRadius: 5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!60 &1662579639
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3912,6 +3969,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &1662579642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662579632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7973d5c2d3a29bb40bb194c56fed7160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 812034552}
+  - {fileID: 1811947093}
+  - {fileID: 1948403695}
+  - {fileID: 687080880}
+  - {fileID: 75175972}
+  moveSpeed: 3
+  detectionRadius: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1674721048
 GameObject:
   m_ObjectHideFlags: 0
