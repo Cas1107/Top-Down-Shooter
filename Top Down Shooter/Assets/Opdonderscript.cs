@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Opdonderscript : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // De kogel verdwijnt zodra het iets raakt
-        Destroy(gameObject);
+            Destroy(gameObject); // Verwijder de bullet
+        
     }
 }
