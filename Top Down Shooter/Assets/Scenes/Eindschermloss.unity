@@ -1395,7 +1395,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624788884}
   m_CullTransparentMesh: 1
---- !u!1 &1712500974
+--- !u!1 &1739895072
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1403,22 +1403,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1712500976}
-  - component: {fileID: 1712500975}
+  - component: {fileID: 1739895074}
+  - component: {fileID: 1739895073}
   m_Layer: 0
-  m_Name: jep 1
+  m_Name: 988148-Overlord-anime-Ainz-Ooal-Gown-anime-skeleton-simple-background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1712500975
+--- !u!212 &1739895073
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712500974}
+  m_GameObject: {fileID: 1739895072}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1453,28 +1453,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f55a6aa8d5a71341b969948eaae7fac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d04270ec2364ed4e9e5fb5d7601f915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 38.399998, y: 24.000002}
+  m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1712500976
+--- !u!4 &1739895074
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712500974}
+  m_GameObject: {fileID: 1739895072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0182, y: -0.0003, z: 0}
-  m_LocalScale: {x: 0.4679212, y: 0.42482784, z: 1}
+  m_LocalPosition: {x: -0.0496, y: 0.0274, z: 0}
+  m_LocalScale: {x: 0.47044185, y: 0.4673422, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1486,5 +1486,5 @@ SceneRoots:
   - {fileID: 1317158307}
   - {fileID: 1151310135}
   - {fileID: 101375950}
-  - {fileID: 1712500976}
   - {fileID: 961516350}
+  - {fileID: 1739895074}
