@@ -2878,6 +2878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1255364077}
+  - component: {fileID: 1255364078}
   m_Layer: 0
   m_Name: scoreManager
   m_TagString: Untagged
@@ -2900,6 +2901,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255364078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255364076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a232a1be3adac1f438d7cd11a6417886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1458261990}
 --- !u!1 &1263582235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4306,12 +4320,12 @@ GameObject:
   - component: {fileID: 1674721051}
   - component: {fileID: 1674721050}
   - component: {fileID: 1674721049}
-  - component: {fileID: 1674721052}
   - component: {fileID: 1674721054}
   - component: {fileID: 1674721053}
   - component: {fileID: 1674721055}
   - component: {fileID: 1674721056}
-  - component: {fileID: 1674721057}
+  - component: {fileID: 1674721058}
+  - component: {fileID: 1674721059}
   m_Layer: 6
   m_Name: player
   m_TagString: Player
@@ -4408,62 +4422,6 @@ Transform:
   - {fileID: 220670054}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1674721052
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674721048}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.875, y: 2.9375}
-    newSize: {x: 1.875, y: 2.9375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.0625, y: 1.40625}
-      - {x: 0, y: 1.46875}
-      - {x: -0.5, y: 1.46875}
-      - {x: -0.9375, y: 0.71875}
-      - {x: -0.9375, y: -0.21875}
-      - {x: -0.5625, y: -0.90625}
-      - {x: -0.4375, y: -1.15625}
-      - {x: -0.125, y: -1.15625}
-      - {x: 0.1875, y: -1.03125}
-      - {x: 0.6875, y: -0.03125}
-      - {x: 0.6875, y: 0.46875}
-  m_UseDelaunayMesh: 0
 --- !u!50 &1674721053
 Rigidbody2D:
   serializedVersion: 4
@@ -4535,7 +4493,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levens: 3
   levensCount: {fileID: 1546067283}
---- !u!60 &1674721057
+--- !u!114 &1674721058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674721048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119ffe5c58df5f34c9d188b74bb5889e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &1674721059
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4588,7 +4558,6 @@ PolygonCollider2D:
       - {x: -0.4375, y: -1.15625}
       - {x: -0.125, y: -1.15625}
       - {x: 0.1875, y: -1.03125}
-      - {x: 0.49616483, y: -0.4139205}
       - {x: 0.6875, y: -0.03125}
       - {x: 0.6875, y: 0.46875}
   m_UseDelaunayMesh: 0
@@ -19754,9 +19723,10 @@ GameObject:
   - component: {fileID: 2061921488}
   - component: {fileID: 2061921487}
   - component: {fileID: 2061921486}
+  - component: {fileID: 2061921489}
   m_Layer: 0
   m_Name: coin2_20x20_0
-  m_TagString: Untagged
+  m_TagString: coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19849,6 +19819,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &2061921489
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061921485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 1.125}
+    newSize: {x: 1.125, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5625, y: 0.5625}
+      - {x: -0.5625, y: -0.5625}
+      - {x: 0.5625, y: -0.5625}
+      - {x: 0.5625, y: 0.5625}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2099313274
 GameObject:
   m_ObjectHideFlags: 0
