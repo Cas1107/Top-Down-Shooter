@@ -9,15 +9,16 @@ public class playerlevens : MonoBehaviour
 {
     public int levens = 3; // Start met 3 levens
     public TextMeshProUGUI levensCount; // Verwijzing naar de UI-tekst
+    private bool kanGehitWorden = true; // Voorkomt snelle opeenvolgende hits
 
     private void Start()
     {
         UpdateLevensUI(); // UI updaten bij start
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // OnCollisionEnter2D in plaats van OnTriggerEnter2D
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) // Controleer of de speler een vijand raakt
+        if (collision.gameObject.CompareTag("Enemy") && kanGehitWorden) // Controleer of de speler geraakt kan worden
         {
             levens--; // Verminder leven met 1
             UpdateLevensUI(); // Update de UI
@@ -26,16 +27,28 @@ public class playerlevens : MonoBehaviour
             {
                 GameOver(); // Roep de Game Over functie aan
             }
+            else
+            {
+                StartCoroutine(HerstelTijd()); // Start herstelperiode
+            }
         }
+    }
+
+    IEnumerator HerstelTijd()
+    {
+        kanGehitWorden = false; // Zet hitbox tijdelijk uit
+        yield return new WaitForSeconds(0.2f); // Wacht 0.5 seconden
+        kanGehitWorden = true; // Speler kan weer geraakt worden
     }
 
     void UpdateLevensUI()
     {
-        levensCount.text = "" + levens; // Update de tekst
+        levensCount.text = levens.ToString(); // Update de tekst
     }
+
     void GameOver()
     {
-        SceneManager.LoadScene("Eindschermwin"); // Zorg dat je "Eindscherm" gebruikt als de naam van je eindscherm-scène
+        SceneManager.LoadScene("Eindschermwin"); // Laad de eindscherm-scène
     }
 }
 
