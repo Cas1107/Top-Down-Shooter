@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
-public class coinscript : MonoBehaviour
+public class Coinscount : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
     public static int coins = 0;

@@ -8,11 +8,12 @@ public class schiet : MonoBehaviour
     public Transform ShootPoint;
     public float bulletForce = 2000f;
     public bool isGrounded = true;
+    int Ammo = 10; 
 
     void Update()
     {
         // Controleer of de linkermuisknop is ingedrukt
-        if (Input.GetMouseButtonDown(0)) // 0 = linkermuisknop
+        if (Input.GetMouseButtonDown(0) && Ammo <= 0) // 0 = linkermuisknop
         {
             GameObject tempBullet = Instantiate(bulletPrefab, ShootPoint.position, ShootPoint.rotation);
 
@@ -26,7 +27,7 @@ public class schiet : MonoBehaviour
             {
                 rb.AddForce(transform.right * bulletForce);
             }
-
+            Ammo--;
         }
     }
 }
