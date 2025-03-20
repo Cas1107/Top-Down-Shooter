@@ -7,14 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class playerlevens : MonoBehaviour
 {
-
     public int levens = 3; // Start met 3 levens
     public TextMeshProUGUI levensCount; // Verwijzing naar de UI-tekst
+    
+    public AudioClip hitSound; // Geluid dat wordt afgespeeld bij een hit
+    private AudioSource audioSource; // De AudioSource component
     private bool kanGehitWorden = true; // Voorkomt snelle opeenvolgende hits
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>(); // Haal de AudioSource op
         UpdateLevensUI(); // UI updaten bij start
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,9 +28,15 @@ public class playerlevens : MonoBehaviour
             levens--; // Verminder leven met 1
             UpdateLevensUI(); // Update de UI
 
+            if (hitSound != null && audioSource != null) // Controleer of er een geluid is ingesteld
+            {
+                audioSource.PlayOneShot(hitSound); // Speel het geluid af
+            }
+
+            
+
             if (levens <= 0)
             {
-                
                 GameOver(); // Roep de Game Over functie aan
             }
             else
@@ -43,6 +53,8 @@ public class playerlevens : MonoBehaviour
         kanGehitWorden = true; // Speler kan weer geraakt worden
     }
 
+
+
     void UpdateLevensUI()
     {
         levensCount.text = levens.ToString(); // Update de tekst
@@ -50,10 +62,7 @@ public class playerlevens : MonoBehaviour
 
     void GameOver()
     {
-        //coins = 0;
-
         coincount.coins = 0;
-
         SceneManager.LoadScene("Eindschermwin"); // Laad de eindscherm-scène
     }
 }
