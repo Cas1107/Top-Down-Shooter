@@ -11,9 +11,12 @@ public class Beginscherm : MonoBehaviour
     [SerializeField] private string SampleScene_Casper;
 
     // Functie die je koppelt aan de knop
+
+    // Functie die je koppelt aan de knop
     public void LoadScene()
     {
-        // Laadt de scene met de opgegeven naam
+
+
         SceneManager.LoadScene(SampleScene_Casper);
         
     }

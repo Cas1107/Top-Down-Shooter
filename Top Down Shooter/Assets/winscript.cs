@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class winscript : MonoBehaviour
 {
-    
+
     public List<GameObject> enemies; // Lijst van vijanden
     public List<GameObject> coins;   // Lijst van coins
 
@@ -38,6 +39,7 @@ public class winscript : MonoBehaviour
         // Als er geen vijanden en geen coins meer zijn, laad het eindscherm
         if (enemies.Count == 0 && coins.Count == 0)
         {
+
             LoadEndScreen();
         }
     }
