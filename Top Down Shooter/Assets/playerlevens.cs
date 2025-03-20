@@ -10,13 +10,16 @@ public class playerlevens : MonoBehaviour
     public int levens = 3; // Start met 3 levens
     public TextMeshProUGUI levensCount; // Verwijzing naar de UI-tekst
     
-    public AudioClip hitSound; // Geluid dat wordt afgespeeld bij een hit
-    private AudioSource audioSource; // De AudioSource component
+    Audiomanager audioManager;
     private bool kanGehitWorden = true; // Voorkomt snelle opeenvolgende hits
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audiomanager>();
+    }
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Haal de AudioSource op
+        
         UpdateLevensUI(); // UI updaten bij start
         
     }
@@ -26,12 +29,10 @@ public class playerlevens : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && kanGehitWorden) // Controleer of de speler geraakt kan worden
         {
             levens--; // Verminder leven met 1
+            audioManager.PlaySFX(audioManager.death);
             UpdateLevensUI(); // Update de UI
 
-            if (hitSound != null && audioSource != null) // Controleer of er een geluid is ingesteld
-            {
-                audioSource.PlayOneShot(hitSound); // Speel het geluid af
-            }
+            
 
             
 

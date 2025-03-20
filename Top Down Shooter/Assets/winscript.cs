@@ -35,7 +35,7 @@ public class winscript : MonoBehaviour
         // Als er geen vijanden en geen coins meer zijn, laad het eindscherm
         if (enemies.Count == 0 && coins.Count == 0)
         {
-
+            coincount.coins = 0;
             LoadEndScreen();
         }
     }

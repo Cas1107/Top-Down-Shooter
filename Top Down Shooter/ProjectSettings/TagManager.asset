@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - coincount
   - coin
+  - Audio
   layers:
   - Default
   - TransparentFX
