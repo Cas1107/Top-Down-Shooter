@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class playerlevens : MonoBehaviour
 {
+    
     public int levens = 3; // Start met 3 levens
     public TextMeshProUGUI levensCount; // Verwijzing naar de UI-tekst
     private bool kanGehitWorden = true; // Voorkomt snelle opeenvolgende hits
@@ -48,6 +49,7 @@ public class playerlevens : MonoBehaviour
 
     void GameOver()
     {
+        
         SceneManager.LoadScene("Eindschermwin"); // Laad de eindscherm-scène
     }
 }

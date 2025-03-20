@@ -972,9 +972,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Doel met Controls\n\n\nHet spel speel je met 1 speler. \n\nHet doel van
     het spel is om alle zombies te doden en 3 munten op te rapen om te winnen.\n\nProbeer
-    niet dood te gaan door de zombies want je hebt maar 3 HP.\n\nDe speler kijkt
-    de richting van de muis op.\n\nDat is ook de richting waar de speler naartoe
-    loopt.\nGebruik W om te lopen.\n\nSchieten doet de speler met linkermuisknop."
+    niet dood te gaan door de zombies want je hebt maar 3 HP en de zombies 5.\n\nDe
+    speler kijkt de richting van de muis op.\n\nDat is ook de richting waar de speler
+    naartoe loopt.\nGebruik W om te lopen.\n\nSchieten doet de speler met linkermuisknop."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

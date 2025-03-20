@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class winscript : MonoBehaviour
 {
+    
     public List<GameObject> enemies; // Lijst van vijanden
     public List<GameObject> coins;   // Lijst van coins
 
@@ -41,6 +44,7 @@ public class winscript : MonoBehaviour
 
     void LoadEndScreen()
     {
+        
         SceneManager.LoadScene("Eindschermloss"); // Zorg ervoor dat je een scène hebt met deze naam voor winst
     }
 }
