@@ -39,7 +39,7 @@ public class playerlevens : MonoBehaviour
     IEnumerator HerstelTijd()
     {
         kanGehitWorden = false; // Zet hitbox tijdelijk uit
-        yield return new WaitForSeconds(0.2f); // Wacht 0.5 seconden
+        yield return new WaitForSeconds(0.2f); // Wacht 0.2 seconden
         kanGehitWorden = true; // Speler kan weer geraakt worden
     }
 

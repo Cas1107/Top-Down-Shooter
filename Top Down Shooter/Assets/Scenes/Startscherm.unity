@@ -971,11 +971,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Doel met Controls\n\n\nHet spel speel je met 1 speler. \n\nHet doel van
-    het spel is om alle skeletons te doden en 3 munten op te rapen om te winnen.\n\nProbeer
-    niet dood te gaan door de skeletons want je hebt maar 3 HP en de zombies 5.\n\nDe
-    speler kijkt naar de richting van de muis.\n\nDat is ook de richting waar de
-    speler naartoe loopt.\nGebruik W om te lopen.\n\nSchieten doet de speler met
-    linkermuisknop."
+    het spel is om alle skeletons te doden om in hun kamp te komen en in totaal 3
+    munten te stelen uit hun kampen om te winnen.\n\nProbeer niet dood te gaan door
+    de skeletons want je hebt maar 3 HP en de zombies 5.\n\nDe speler kijkt naar
+    de richting van de muis.\n\nDat is ook de richting waar de speler naartoe loopt.\nGebruik
+    W om te lopen.\n\nSchieten doet de speler met linkermuisknop."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1002,8 +1002,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
